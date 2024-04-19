@@ -3,8 +3,10 @@ import PersonIcon from '@mui/icons-material/Person';
 import { Box, Container, CssBaseline, FormControl,InputLabel, MenuItem, Select, SelectChangeEvent,Typography} from "@mui/material";
 import Link from "next/link";
 import * as React from 'react';
+import { useEffect } from 'react';
 import Navbar from "./components/Navbar";
 import Resumen from "./components/Resumen";
+import { getPaymentMethods } from "./services/paymentMethods";
 
 export default function Home() {
 
@@ -13,6 +15,9 @@ export default function Home() {
   const handleChange = (event: SelectChangeEvent) => {
     setDirection(event.target.value as string);
   };
+  useEffect( () => {
+    getPaymentMethods()
+  }, [])
 
   return (
       <>
