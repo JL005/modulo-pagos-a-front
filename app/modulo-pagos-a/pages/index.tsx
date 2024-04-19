@@ -2,12 +2,20 @@
 import Navbar from "../components/Navbar";
 import Resumen from "../components/Resumen";
 import * as React from 'react';
+import { useEffect } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import PersonIcon from '@mui/icons-material/Person';
 import { Box, Container, FormControl,InputLabel, MenuItem, Select, SelectChangeEvent,Typography} from "@mui/material";
 import Link from "next/link";
+import { getPaymentMethods } from "../services/booking";
 
 export default function Home() {
+
+  useEffect(() => {
+    getPaymentMethods()
+
+  }, [])
+  
 
   const [direction, setDirection] = React.useState('');
 
