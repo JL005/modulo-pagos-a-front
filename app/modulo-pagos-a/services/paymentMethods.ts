@@ -1,6 +1,6 @@
 import { Payment, PaymentMethod } from "../interfaces";
 
-const API_URL = 'https://codefact.udea.edu.co'
+const API_URL = 'https://codefact.udea.edu.co/modulo-01'
 
 export const getPaymentMethods = async (): Promise<PaymentMethod[]> => {
     try {
