@@ -7,12 +7,12 @@ import CssBaseline from '@mui/material/CssBaseline';
 import PersonIcon from '@mui/icons-material/Person';
 import { Box, Container, FormControl,InputLabel, MenuItem, Select, SelectChangeEvent,Typography} from "@mui/material";
 import Link from "next/link";
-import { getPaymentMethods } from "../services/booking";
+import { getPaymentMethods } from "../services/paymentMethods";
 
 export default function Home() {
 
-  useEffect(() => {
-    getPaymentMethods()
+  useEffect(async () => {
+    await getPaymentMethods()
 
   }, [])
   
